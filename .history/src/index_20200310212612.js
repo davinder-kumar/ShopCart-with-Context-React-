@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import { ProductProvider } from './context/products.context'
+import {ProductProvider} from './context/products.context'
 
 import './index.css';
 import App from './App';
-import productStore from './custom-store/products-store'
-productStore();
+import {productStore} from './custom-store/products-store'
+ 
 ReactDOM.render(
   <ProductProvider>
     <BrowserRouter>

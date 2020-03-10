@@ -10,7 +10,7 @@ const ProductItem = props => {
   // const toggleFav = useContext(productContext).toggleFav
 
   const toggleFavHandler = () => {
-    dispatch("TOGGLE_FAV",props.id)
+    toggleFav(props.id);
   };
 
   return (

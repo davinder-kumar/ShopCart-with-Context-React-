@@ -5,12 +5,10 @@ import {useStore} from '../../custom-store/store'
 import './ProductItem.css';
 
 const ProductItem = props => {
-  const dispatch = useStore()[1]
-  // console.log(dispatch)
-  // const toggleFav = useContext(productContext).toggleFav
+  const toggleFav = useContext(productContext).toggleFav
 
   const toggleFavHandler = () => {
-    dispatch("TOGGLE_FAV",props.id)
+    toggleFav(props.id);
   };
 
   return (

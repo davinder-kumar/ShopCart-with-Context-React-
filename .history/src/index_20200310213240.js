@@ -6,7 +6,7 @@ import { ProductProvider } from './context/products.context'
 import './index.css';
 import App from './App';
 import productStore from './custom-store/products-store'
-productStore();
+// productStore();
 ReactDOM.render(
   <ProductProvider>
     <BrowserRouter>

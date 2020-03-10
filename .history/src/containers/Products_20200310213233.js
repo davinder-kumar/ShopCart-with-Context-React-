@@ -6,7 +6,7 @@ import './Products.css';
 
 const Products = props => {
   const [state] =  useStore()
-  // console.log(state)
+  console.log(state)
   // const productList = useContext(productContext).products
   return (
     <ul className="products-list">

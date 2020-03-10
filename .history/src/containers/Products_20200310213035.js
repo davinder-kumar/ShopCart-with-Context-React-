@@ -5,12 +5,12 @@ import ProductItem from '../components/Products/ProductItem';
 import './Products.css';
 
 const Products = props => {
-  const [state] =  useStore()
-  // console.log(state)
+  const [state,dispatch] =  useStore()
+  console.log(state,"SDASS")
   // const productList = useContext(productContext).products
   return (
     <ul className="products-list">
-      {state.products.map(prod => (
+      {productList.map(prod => (
         <ProductItem
           key={prod.id}
           id={prod.id}
