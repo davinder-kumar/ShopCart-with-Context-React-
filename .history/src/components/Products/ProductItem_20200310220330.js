@@ -4,9 +4,9 @@ import Card from '../UI/Card';
 import {useStore} from '../../custom-store/store'
 import './ProductItem.css';
 
-const ProductItem = React.memo(props => {
-  const [state,dispatch] = useStore(false)
-  console.log("RENDERED",state)
+const ProductItem = props => {
+  const dispatch = useStore()[1]
+  // console.log(dispatch)
   // const toggleFav = useContext(productContext).toggleFav
 
   const toggleFavHandler = () => {
@@ -27,6 +27,6 @@ const ProductItem = React.memo(props => {
       </div>
     </Card>
   );
-});
+};
 
 export default ProductItem;

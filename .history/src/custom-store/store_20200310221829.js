@@ -4,35 +4,34 @@ let globalState = {}
 let listeners = []
 let actions = {}
 
-export const useStore = (shouldListen = true) => {
+export const useStore = (shouldListen=true) =>{
     const setState = useState(globalState)[1]
 
-    const dispatch = (actionName, payload) => {
-        const newState = actions[actionName](globalState, payload)
+    const dispatch = (actionName,payload) =>{
+        const newState = actions[actionName](globalState,payload)
         globalState = {
-            ...globalState, ...newState
+            ...globalState ,...newState
         }
-
-        for (let listener of listeners) {
+            
+        for(let listener of listeners){
             listener(globalState)
         }
     }
-    useEffect(() => {
-        if (shouldListen) {
+    useEffect(()=>{
+        if(shouldListen){
             listeners.push(setState)
         }
 
-        return () => {
-            if (shouldListen) {
+        return ()=>{
+            if(shouldListen)
                 listeners = listeners.filter(lis => lis !== setState)
-            }
         }
-    }, [setState])
+    },[setState])
     return [globalState, dispatch]
 }
 
-export const initStore = (state, actionsP) => {
-    if (state) {
+export const initStore = (state, actionsP) =>{
+    if(state){
         globalState = {
             ...globalState, ...state
         }

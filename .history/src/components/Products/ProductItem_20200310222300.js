@@ -5,7 +5,7 @@ import {useStore} from '../../custom-store/store'
 import './ProductItem.css';
 
 const ProductItem = React.memo(props => {
-  const [state,dispatch] = useStore(false)
+  const [state,dispatch] = useStore(true)
   console.log("RENDERED",state)
   // const toggleFav = useContext(productContext).toggleFav
 
