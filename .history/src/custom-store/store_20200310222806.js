@@ -21,6 +21,7 @@ export const useStore = (shouldListen = true) => {
         if (shouldListen) {
             listeners.push(setState)
         }
+        console.log(listeners)
         return () => {
             if (shouldListen) {
                 listeners = listeners.filter(lis => lis !== setState)

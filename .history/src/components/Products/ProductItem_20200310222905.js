@@ -5,8 +5,8 @@ import {useStore} from '../../custom-store/store'
 import './ProductItem.css';
 
 const ProductItem = React.memo(props => {
-  const [state,dispatch] = useStore(false)
-  // console.log("RENDERED",state)
+  const [state,dispatch] = useStore(true  )
+  console.log("RENDERED",state)
 
   const toggleFavHandler = () => {
     dispatch("TOGGLE_FAV",props.id)
